@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <title>Reward Insight – CMP Demo</title>
+    <meta
+      name="description"
+      content="Demo page with OneTrust CMP on top of a Reward Insight background."
+    />
+
+    <!-- OptanonConsentNoticeStart -->
+    <script
+      src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+      type="text/javascript"
+      charset="UTF-8"
+      data-domain-script="019c09a0-56db-73a2-8935-da150c29b863-test">
+    </script>
+    <script type="text/javascript">
+      function OptanonWrapper() { }
+    </script>
+    <!-- OptanonConsentNoticeEnd -->
+
+    <script type="text/javascript">
+      // Optional: expose a safe opener for the preference center
+      window.openCookiePreferences = function () {
+        if (typeof Optanon !== "undefined" && typeof Optanon.ToggleInfoDisplay === "function") {
+          Optanon.ToggleInfoDisplay();
+        } else {
+          alert("Cookie preference center isn't ready yet. Try again in a moment.");
+        }
+      };
+    </script>
+
+    <style>
+      :root {
+        --overlay-bg: rgba(0, 0, 0, 0.35);
+        --card-bg: rgba(255, 255, 255, 0.92);
+        --text-color: #0f172a;
+        --accent: #1e5cc0; /* Reward Insight blue */
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+        color: var(--text-color);
+      }
+
+      /* Full-bleed background image */
+      .hero-bg {
+        position: fixed;
+        inset: 0;
+        background: url("./RewardInsight.png") center center / cover no-repeat;
+        z-index: -2;
+      }
+
+      .hero-overlay {
+        position: fixed;
+        inset: 0;
+        background: var(--overlay-bg);
+        z-index: -1;
+      }
+
+      .site-shell {
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      header, footer {
+        backdrop-filter: saturate(120%) blur(2px);
+        background: rgba(255, 255, 255, 0.65);
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 24px;
+      }
+
+      header .brand {
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+
+      header nav a {
+        color: #111827;
+        text-decoration: none;
+        margin-left: 16px;
+        padding: 6px 10px;
+        border-radius: 8px;
+      }
+
+      header nav a:hover {
+        background: rgba(0,0,0,0.06);
+      }
+
+      main {
+        display: grid;
+        place-items: center;
+        padding: 40px 16px;
+      }
+
+      .card {
+        width: min(720px, 96vw);
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow:
+          0 10px 30px rgba(0,0,0,0.18),
+          0 1px 2px rgba(0,0,0,0.08);
+      }
+
+      .card h1 {
+        margin: 0 0 8px;
+        font-size: clamp(22px, 2.6vw, 34px);
+      }
+
+      .card p.lead {
+        margin: 0 0 16px;
+        color: #334155;
+      }
+
+      .actions {
+        margin-top: 18px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        appearance: none;
+        border: 1px solid #cbd5e1;
+        background: white;
+        color: #0b1220;
+        padding: 10px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .btn:hover {
+        border-color: #94a3b8;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: white;
+      }
+
+      footer {
+        padding: 14px 24px;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* Ensure OneTrust layers appear above everything */
+      #onetrust-banner-sdk,
+      #onetrust-consent-sdk {
+        z-index: 2147483647 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="site-shell">
+      <header role="banner">
+        <div class="brand">Reward Insight (Demo)</div>
+        <nav aria-label="Primary">
+          <a href="#" aria-current="page">Home</a>
+          <a href="#">Solutions</a>
+          <a href="#">Industries</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+
+      <main role="main">
+        <section class="card" aria-label="Welcome">
+          <h1>Unlock Value Through Data‑Driven Loyalty</h1>
+          <p class="lead">
+            This is a demo page using the OneTrust CMP test environment.
+            The background simulates <em>RewardInsight.png</em>.
+          </p>
+
+          <div class="actions">
+            <button class="btn-primary btn" onclick="openCookiePreferences()">
+              Manage Cookies
+            </button>
+            <button class="btn" onclick="location.reload()">
+              Reload page
+            </button>
+          </div>
+
+          <p style="margin-top: 14px; color:#475569; font-size:14px;">
+            Tip: Use “Manage Cookies” to re-open the OneTrust preference center during demos.
+          </p>
+        </section>
+      </main>
+
+      <footer role="contentinfo">
+        <span>© 2026 Reward Insight – Demo only</span>
+        <button class="btn" onclick="openCookiePreferences()">Cookie Preferences</button>
+      </footer>
+    </div>
+  </body>
+</html>
