@@ -1,4 +1,4 @@
-# UCPM Embedded Collection Points  
+# CMP Banners  
 **Creation, Embedding & Contribution Guide**
 
 This document provides an **end-to-end guide** for working with **UCPM Embedded Collection Points**.
