@@ -97,8 +97,8 @@ cat > "$OUTPUT" <<HTML
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>UCPM Banners Library</title>
-  <meta name="description" content="Auto-generated library of UCPM banner HTML files in this repository." />
+  <title>CMP Banners Library</title>
+  <meta name="description" content="Auto-generated library of CMP banner HTML files in this repository." />
   <style>
     :root{
       --bg: #0b1020;
@@ -460,7 +460,7 @@ cat > "$OUTPUT" <<HTML
     <div class="top">
       <div class="hero">
         <div>
-          <h1>UCPM Banners Library</h1>
+          <h1>CMP Banners Library</h1>
           <div class="sub">
             <span class="pill"><span class="dot"></span><strong>${COUNT}</strong> file(s)</span>
             <span class="pill">Last Update: <span class="mono">${LAST_UPDATE_DATETIME}</span> <span class="mono">(${LAST_UPDATE_USER})</span></span>
